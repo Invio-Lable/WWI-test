@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4394282d62d9cf149b095908ac4449e2, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: 7208f9981d046e142bebde9e37eb6751, type: 3}
+  m_Name: Bat
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: a9c3120c3706fbb4193d6e2e42c8c790, type: 3}
-  damage: 10
-  health: 60
+  damage: 5
+  health: 50
   attackSpeed: 1
-  movementSpeed: 10
-  reward: 27
-  cost: 0
+  movementSpeed: 1

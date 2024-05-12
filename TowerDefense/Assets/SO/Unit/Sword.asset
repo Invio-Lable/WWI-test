@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4394282d62d9cf149b095908ac4449e2, type: 3}
-  m_Name: Bat
+  m_Name: Sword
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: a9c3120c3706fbb4193d6e2e42c8c790, type: 3}
-  damage: 5
-  health: 50
+  damage: 10
+  health: 60
   attackSpeed: 1
-  movementSpeed: 10
-  reward: 10
+  movementSpeed: 1
+  reward: 27
   cost: 0
