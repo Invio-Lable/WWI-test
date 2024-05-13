@@ -454,8 +454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: 0}
-  m_SizeDelta: {x: 1231, y: 593}
+  m_AnchoredPosition: {x: 0.000011444, y: 0.0012969}
+  m_SizeDelta: {x: 1231, y: 566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622222190
 MonoBehaviour:
@@ -560,8 +560,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -149.25}
-  m_SizeDelta: {x: 1231, y: 298.51}
+  m_AnchoredPosition: {x: 0, y: -141.5}
+  m_SizeDelta: {x: 1231, y: 283.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746414783
 MonoBehaviour:
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -830,13 +830,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674b23f48d4534a4ea0c5bd5c800dd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: e0296ec7acbb0764faf1b81fef43afff, type: 2}
+  enemyDatas:
+  - {fileID: 11400000, guid: a7da7e4737743364ab778f1699f118f5, type: 2}
+  - {fileID: 11400000, guid: e0296ec7acbb0764faf1b81fef43afff, type: 2}
+  - {fileID: 11400000, guid: 50e234a868f0c014f9a0388eb5aeb710, type: 2}
+  enemyPrefabs:
+  - {fileID: 3021574100264058168, guid: 962b1c8c2242d354db0e52ccba6974f5, type: 3}
+  - {fileID: 5395174935437894037, guid: bc8144f2e407995418055813a5f920f7, type: 3}
+  - {fileID: 1493661254093096958, guid: df9862c16df94c04292eab02fab204d9, type: 3}
   spawnPoints:
   - {fileID: 1200808788}
   - {fileID: 173473161}
   - {fileID: 635363715}
   endPoint: {fileID: 1146283106}
-  maxEnemiesPerSpawn: 2
+  maxEnemiesPerSpawn: 1
   spawnInterval: 7
 --- !u!1 &1146283105
 GameObject:
@@ -954,6 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitData: {fileID: 11400000, guid: e89e66a9d7f9a254d9a848aff4c649d7, type: 2}
+  unitPrefab: {fileID: 9011084850061540653, guid: 11cf951a0c19b954699090775a6c7f1b, type: 3}
   spawnButton: {fileID: 1918260922}
   startPoint: {fileID: 572659986}
   endPoint: {fileID: 1106445144}

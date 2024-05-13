@@ -3,10 +3,11 @@ using UnityEngine.UI;
 
 public class UnitSpawner : MonoBehaviour
 {
-    public UnitData unitData;
-    public Button spawnButton;
-    public Transform startPoint;
-    public Transform endPoint;
+    public UnitData unitData; // Посилання на дані юніта
+    public GameObject unitPrefab; // Посилання на префаб юніта
+    public Button spawnButton; // Посилання на кнопку спавну
+    public Transform startPoint; // Початкова точка руху юніта
+    public Transform endPoint; // Кінцева точка руху юніта
 
     private void Start()
     {
@@ -15,20 +16,12 @@ public class UnitSpawner : MonoBehaviour
 
     private void SpawnUnit()
     {
-        GameObject unitObject = new GameObject("Unit");
-        unitObject.transform.position = startPoint.position;
-        SpriteRenderer spriteRenderer = unitObject.AddComponent<SpriteRenderer>();
-        spriteRenderer.sprite = unitData.sprite;
+        // Створюємо нового юніта з префаба
+        GameObject unitObject = Instantiate(unitPrefab, startPoint.position, Quaternion.identity);
+        unitObject.name = "Unit";
 
-        // Додаємо компонент Rigidbody2D
-        Rigidbody2D rb = unitObject.AddComponent<Rigidbody2D>();
-        rb.gravityScale = 0; // Вимикаємо гравітацію
-
-        // Додаємо компонент Collider2D
-        CircleCollider2D collider = unitObject.AddComponent<CircleCollider2D>();
-        collider.isTrigger = false; // Встановлюємо, що це не тригер
-
-        UnitMovement unitMover = unitObject.AddComponent<UnitMovement>();
+        // Додаємо скрипт руху і налаштовуємо його
+        UnitMovement unitMover = unitObject.GetComponent<UnitMovement>();
         unitMover.startPoint = startPoint.position;
         unitMover.endPoint = endPoint.position;
         unitMover.speed = unitData.movementSpeed;

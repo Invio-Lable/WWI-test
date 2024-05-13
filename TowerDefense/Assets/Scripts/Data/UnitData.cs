@@ -3,7 +3,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class UnitData : ScriptableObject
 {
-    public Sprite sprite;
     public int damage;
     public int health;
     public float attackSpeed;

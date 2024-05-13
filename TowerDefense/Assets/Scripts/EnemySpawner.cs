@@ -1,16 +1,19 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public EnemyData enemyData;
-    public Transform[] spawnPoints;
-    public Transform endPoint;
-    public int maxEnemiesPerSpawn = 3;
-    public float spawnInterval = 7f;
+    public List<EnemyData> enemyDatas; // Список з даними про ворогів
+    public List<GameObject> enemyPrefabs; // Список з префабами ворогів
+    public Transform[] spawnPoints; // Масив точок спавну
+    public Transform endPoint; // Кінцева точка руху ворога
+    public int maxEnemiesPerSpawn = 3; // Максимальна кількість ворогів за один спавн
+    public float spawnInterval = 7f; // Інтервал між спавнами
 
     private void Start()
     {
+        // Починаємо процес спавну ворогів
         StartCoroutine(SpawnEnemies());
     }
 
@@ -18,33 +21,31 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
+            // Вибираємо випадкову точку спавну
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
+            // Вибираємо випадкову кількість ворогів для спавну
             int numEnemies = Random.Range(1, maxEnemiesPerSpawn + 1);
 
             for (int i = 0; i < numEnemies; i++)
             {
-                GameObject enemyObject = new GameObject("Enemy");
-                SpriteRenderer spriteRenderer = enemyObject.AddComponent<SpriteRenderer>();
-                spriteRenderer.sprite = enemyData.sprite;
+                // Вибираємо випадкові дані ворога
+                int randomIndex = Random.Range(0, enemyDatas.Count);
+                EnemyData enemyData = enemyDatas[randomIndex];
 
-                // Додаємо компонент Rigidbody2D
-                Rigidbody2D rb = enemyObject.AddComponent<Rigidbody2D>();
-                rb.gravityScale = 0; // Вимикаємо гравітацію
+                // Створюємо нового ворога з випадкового префаба
+                GameObject enemyPrefab = enemyPrefabs[randomIndex];
+                GameObject enemyObject = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+                enemyObject.name = "Enemy";
 
-                // Додаємо компонент Collider2D
-                CircleCollider2D collider = enemyObject.AddComponent<CircleCollider2D>();
-                collider.isTrigger = false; // Встановлюємо, що це не тригер
-
-                Vector3 spawnPosition = spawnPoint.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-                enemyObject.transform.position = spawnPosition;
-
-                UnitMovement enemyMover = enemyObject.AddComponent<UnitMovement>();
-                enemyMover.startPoint = spawnPosition;
+                // Додаємо скрипт руху і налаштовуємо його
+                UnitMovement enemyMover = enemyObject.GetComponent<UnitMovement>();
+                enemyMover.startPoint = spawnPoint.position;
                 enemyMover.endPoint = endPoint.position;
                 enemyMover.speed = enemyData.movementSpeed;
             }
 
+            // Чекаємо інтервал спавну перед наступним спавном
             yield return new WaitForSeconds(spawnInterval);
         }
     }
