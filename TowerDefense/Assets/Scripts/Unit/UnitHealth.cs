@@ -13,6 +13,7 @@ public class UnitHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        Debug.Log("The damage have been taken");
 
         if (currentHealth <= 0)
         {

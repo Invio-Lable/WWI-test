@@ -188,7 +188,7 @@ MonoBehaviour:
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
   speed: 5
-  detectionRange: 5
+  detectionRange: 10
 --- !u!114 &8308827008652219262
 MonoBehaviour:
   m_ObjectHideFlags: 0
