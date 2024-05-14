@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 8604293998325277001}
   - component: {fileID: 4811529023392176711}
   - component: {fileID: 5341546566684418601}
-  - component: {fileID: -57716794277956668}
   - component: {fileID: 7488503969282632696}
   - component: {fileID: 2136250298143279364}
+  - component: {fileID: -57716794277956668}
+  - component: {fileID: 8308827008652219262}
+  - component: {fileID: 8836662528990495560}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,21 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-57716794277956668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9011084850061540653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e45af33f72775fb4f9dd61f3fe71a1ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPoint: {x: 0, y: 0, z: 0}
-  endPoint: {x: 0, y: 0, z: 0}
-  speed: 5
 --- !u!50 &7488503969282632696
 Rigidbody2D:
   serializedVersion: 4
@@ -180,9 +167,51 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.046033204, y: -0.7070479}
-  m_Size: {x: 0.8911029, y: 1.6670896}
+  m_Offset: {x: -0.059374034, y: -0.66035485}
+  m_Size: {x: 1.2379662, y: 1.9205666}
   m_Direction: 0
+--- !u!114 &-57716794277956668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011084850061540653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45af33f72775fb4f9dd61f3fe71a1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {x: 0, y: 0, z: 0}
+  endPoint: {x: 0, y: 0, z: 0}
+  speed: 5
+  detectionRange: 5
+--- !u!114 &8308827008652219262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011084850061540653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3f8fbe200a0d3418abf834232d225a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: e89e66a9d7f9a254d9a848aff4c649d7, type: 2}
+--- !u!114 &8836662528990495560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011084850061540653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49051f717fa1f5b4898d1ffda2dfedca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: e89e66a9d7f9a254d9a848aff4c649d7, type: 2}

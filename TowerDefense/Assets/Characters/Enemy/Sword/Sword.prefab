@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 6936466490232816210}
   - component: {fileID: 6496434277147545603}
   - component: {fileID: 5658779977792382265}
-  - component: {fileID: 7164698082993477524}
   - component: {fileID: 5269761677832483282}
   - component: {fileID: 4675542093995086050}
+  - component: {fileID: 1564719559053550993}
+  - component: {fileID: 2596872861155415569}
+  - component: {fileID: 3601339952610153056}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,21 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7164698082993477524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493661254093096958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e45af33f72775fb4f9dd61f3fe71a1ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPoint: {x: 0, y: 0, z: 0}
-  endPoint: {x: 0, y: 0, z: 0}
-  speed: 5
 --- !u!50 &5269761677832483282
 Rigidbody2D:
   serializedVersion: 4
@@ -186,3 +173,45 @@ CapsuleCollider2D:
   m_Offset: {x: -0.21269932, y: -0.28231025}
   m_Size: {x: 0.9968237, y: 1.6558719}
   m_Direction: 0
+--- !u!114 &1564719559053550993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493661254093096958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd5b883393a5b646a49382cbb8b319f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 50e234a868f0c014f9a0388eb5aeb710, type: 2}
+--- !u!114 &2596872861155415569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493661254093096958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a071fe97bac1b4f9216af146aa510f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 50e234a868f0c014f9a0388eb5aeb710, type: 2}
+--- !u!114 &3601339952610153056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493661254093096958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8012259e4c87e2c4b89f371548a20758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {x: 0, y: 0, z: 0}
+  endPoint: {x: 0, y: 0, z: 0}
+  speed: 5
+  detectionRange: 5

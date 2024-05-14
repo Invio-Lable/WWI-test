@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
                 enemyObject.name = "Enemy";
 
                 // Додаємо скрипт руху і налаштовуємо його
-                UnitMovement enemyMover = enemyObject.GetComponent<UnitMovement>();
+                EnemyMovement enemyMover = enemyObject.GetComponent<EnemyMovement>();
                 enemyMover.startPoint = spawnPoint.position;
                 enemyMover.endPoint = endPoint.position;
                 enemyMover.speed = enemyData.movementSpeed;

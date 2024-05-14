@@ -831,20 +831,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDatas:
-  - {fileID: 11400000, guid: a7da7e4737743364ab778f1699f118f5, type: 2}
   - {fileID: 11400000, guid: e0296ec7acbb0764faf1b81fef43afff, type: 2}
-  - {fileID: 11400000, guid: 50e234a868f0c014f9a0388eb5aeb710, type: 2}
   enemyPrefabs:
   - {fileID: 3021574100264058168, guid: 962b1c8c2242d354db0e52ccba6974f5, type: 3}
-  - {fileID: 5395174935437894037, guid: bc8144f2e407995418055813a5f920f7, type: 3}
-  - {fileID: 1493661254093096958, guid: df9862c16df94c04292eab02fab204d9, type: 3}
   spawnPoints:
   - {fileID: 1200808788}
   - {fileID: 173473161}
   - {fileID: 635363715}
   endPoint: {fileID: 1146283106}
   maxEnemiesPerSpawn: 1
-  spawnInterval: 7
+  spawnInterval: 20
 --- !u!1 &1146283105
 GameObject:
   m_ObjectHideFlags: 0

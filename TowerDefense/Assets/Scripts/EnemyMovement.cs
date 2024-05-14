@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class UnitMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public Vector3 startPoint;
     public Vector3 endPoint;
     public float speed;
-    public float detectionRange = 5f; // Діапазон виявлення ворогів
+    public float detectionRange = 5f; // Діапазон виявлення юнітів
 
-    private Transform target; // Ціль, до якої рухається юніт
+    private Transform target; // Ціль, до якої рухається ворог
 
     private void Update()
     {
@@ -19,7 +19,7 @@ public class UnitMovement : MonoBehaviour
         else
         {
             // Шукаємо нову ціль
-            FindTarget("Enemy");
+            FindTarget("Unit");
 
             // Якщо немає цілі, рухаємося до кінцевої точки
             if (target == null)
@@ -36,18 +36,18 @@ public class UnitMovement : MonoBehaviour
 
     private void FindTarget(string tag)
     {
-        // Знаходимо всіх ворогів на сцені
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
+        // Знаходимо всі юніти гравця на сцені
+        GameObject[] units = GameObject.FindGameObjectsWithTag(tag);
 
-        // Шукаємо найближчого ворога
+        // Шукаємо найближчого юніта
         float closestDistance = detectionRange;
-        foreach (GameObject enemy in enemies)
+        foreach (GameObject unit in units)
         {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            float distance = Vector3.Distance(transform.position, unit.transform.position);
             if (distance < closestDistance)
             {
                 closestDistance = distance;
-                target = enemy.transform;
+                target = unit.transform;
             }
         }
     }
