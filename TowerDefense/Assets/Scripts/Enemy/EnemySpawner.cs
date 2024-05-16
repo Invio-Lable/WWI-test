@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public List<EnemyData> enemyDatas; // Список з даними про ворогів
     public List<GameObject> enemyPrefabs; // Список з префабами ворогів
     public Transform[] spawnPoints; // Масив точок спавну
-    public Transform endPoint; // Кінцева точка руху ворога
+    public Transform towerTransform; // Трансформ вежі
     public int maxEnemiesPerSpawn = 3; // Максимальна кількість ворогів за один спавн
     public float spawnInterval = 7f; // Інтервал між спавнами
 
@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
                 // Додаємо скрипт руху і налаштовуємо його
                 EnemyMovement enemyMover = enemyObject.GetComponent<EnemyMovement>();
                 enemyMover.startPoint = spawnPoint.position;
-                enemyMover.endPoint = endPoint.position;
+                enemyMover.towerTransform = towerTransform;
                 enemyMover.speed = enemyData.movementSpeed;
             }
 

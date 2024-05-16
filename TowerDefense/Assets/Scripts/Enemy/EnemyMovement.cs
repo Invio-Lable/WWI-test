@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Vector3 startPoint;
-    public Vector3 endPoint;
+    public Vector2 startPoint;
+    public Transform towerTransform; // Додано змінну для трансформу вежі
     public float speed;
     public float detectionRange = 5f; // Діапазон виявлення юнітів
 
@@ -21,17 +21,17 @@ public class EnemyMovement : MonoBehaviour
             // Шукаємо нову ціль
             FindTarget("Unit");
 
-            // Якщо немає цілі, рухаємося до кінцевої точки
-            if (target == null)
+            // Якщо немає цілі, рухаємося до вежі
+            if (target == null && towerTransform != null)
             {
-                MoveTowards(endPoint);
+                MoveTowards(towerTransform.position);
             }
         }
     }
 
     private void MoveTowards(Vector3 position)
     {
-        transform.position = Vector3.MoveTowards(transform.position, position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, position, speed * Time.deltaTime);
     }
 
     private void FindTarget(string tag)
@@ -43,7 +43,7 @@ public class EnemyMovement : MonoBehaviour
         float closestDistance = detectionRange;
         foreach (GameObject unit in units)
         {
-            float distance = Vector3.Distance(transform.position, unit.transform.position);
+            float distance = Vector2.Distance(transform.position, unit.transform.position);
             if (distance < closestDistance)
             {
                 closestDistance = distance;
