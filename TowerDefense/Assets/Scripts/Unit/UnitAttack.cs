@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class UnitAttack : MonoBehaviour
 {
-    public UnitData unitData;
+    public UnitData unitData; // Додано змінну для даних юніта
     private float attackTimer;
     private Animator animator;
     private Collider2D target;
+    private Tower tower; // Додано змінну для вежі
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        tower = FindObjectOfType<Tower>(); // Знаходимо вежу на сцені
     }
 
     private void Update()
@@ -26,6 +28,12 @@ public class UnitAttack : MonoBehaviour
             {
                 enemyHealth.TakeDamage(unitData.damage);
             }
+        }
+        else if (target == null && tower != null && Vector2.Distance(transform.position, tower.transform.position) < 1.0f && attackTimer >= unitData.attackSpeed)
+        {
+            animator.SetTrigger("attack");
+            attackTimer = 0f;
+            tower.TakeDamage(unitData.damage);
         }
         else
         {
@@ -46,6 +54,7 @@ public class UnitAttack : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             target = null;
+            animator.SetTrigger("walk");
         }
     }
 }

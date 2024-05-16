@@ -7,7 +7,7 @@ public class UnitSpawner : MonoBehaviour
     public GameObject unitPrefab; // Посилання на префаб юніта
     public Button spawnButton; // Посилання на кнопку спавну
     public Transform startPoint; // Початкова точка руху юніта
-    public Transform endPoint; // Кінцева точка руху юніта
+    public Transform towerTransform; // Додано змінну для вежі
     public Text coinText; // Посилання на текстове поле для монет
 
     private float coins; // Кількість монет
@@ -28,7 +28,7 @@ public class UnitSpawner : MonoBehaviour
     private void SpawnUnit()
     {
         // Перевіряємо, чи вистачає монет для створення юніта
-        if (coins >= unitData.cost)
+        if (Mathf.FloorToInt(coins) >= unitData.cost)
         {
             // Віднімаємо вартість юніта від кількості монет
             coins -= unitData.cost;
@@ -37,11 +37,14 @@ public class UnitSpawner : MonoBehaviour
             GameObject unitObject = Instantiate(unitPrefab, startPoint.position, Quaternion.identity);
             unitObject.name = "Unit";
 
-            // Додаємо скрипт руху і налаштовуємо його
+            // Додаємо скрипти руху та атаки і налаштовуємо їх
             UnitMovement unitMover = unitObject.GetComponent<UnitMovement>();
             unitMover.startPoint = startPoint.position;
-            unitMover.endPoint = endPoint.position;
+            unitMover.towerTransform = towerTransform; // Налаштовуємо вежу
             unitMover.speed = unitData.movementSpeed;
+
+            UnitAttack unitAttack = unitObject.GetComponent<UnitAttack>();
+            unitAttack.unitData = unitData;
 
             UpdateCoinText();
         }
@@ -50,6 +53,6 @@ public class UnitSpawner : MonoBehaviour
     private void UpdateCoinText()
     {
         // Оновлюємо текстове поле для монет
-        coinText.text = coins.ToString();
+        coinText.text = coins.ToString("F0");
     }
 }
