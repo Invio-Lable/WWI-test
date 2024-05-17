@@ -5,7 +5,7 @@ public class Tower : MonoBehaviour
 {
     public float maxHealth = 100f;
     private float currentHealth;
-    public Text healthText; // Текстовий елемент для відображення здоров'я башти
+    public Text healthText;
 
     private void Start()
     {
@@ -31,7 +31,12 @@ public class Tower : MonoBehaviour
 
     private void DestroyTower()
     {
-        // Додайте логіку руйнування башні
         Debug.Log("Tower Destroyed!");
     }
+
+    public void IncreaseHealth(int amount)
+    {
+        maxHealth += amount;
+    }
+
 }
