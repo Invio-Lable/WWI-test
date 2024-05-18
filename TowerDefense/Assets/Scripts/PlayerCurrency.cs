@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerCurrency : MonoBehaviour
 {
-    public int coins = 0;
+    public CurrencyData currencyData;
     public Text coinsText;
 
     private void Start()
@@ -13,15 +13,15 @@ public class PlayerCurrency : MonoBehaviour
 
     public void AddCoins(int amount)
     {
-        coins += amount;
+        currencyData.coins += amount;
         UpdateCoinsText();
     }
 
     public bool TakeCoins(int amount)
     {
-        if (coins >= amount)
+        if (currencyData.coins >= amount)
         {
-            coins -= amount;
+            currencyData.coins -= amount;
             UpdateCoinsText();
             return true;
         }
@@ -30,6 +30,6 @@ public class PlayerCurrency : MonoBehaviour
 
     private void UpdateCoinsText()
     {
-        coinsText.text = coins.ToString();
+        coinsText.text = currencyData.coins.ToString();
     }
 }

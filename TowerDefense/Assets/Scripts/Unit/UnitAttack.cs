@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class UnitAttack : MonoBehaviour
 {
-    public UnitData unitData; // Додано змінну для даних юніта
+    public UnitData unitData;
     private float attackTimer;
     private Animator animator;
     private Collider2D target;
-    private Tower tower; // Додано змінну для вежі
+    private Tower tower;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        tower = FindObjectOfType<Tower>(); // Знаходимо вежу на сцені
+        tower = FindObjectOfType<Tower>();
     }
 
     private void Update()

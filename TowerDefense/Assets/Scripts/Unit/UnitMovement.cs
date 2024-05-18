@@ -3,26 +3,23 @@ using UnityEngine;
 public class UnitMovement : MonoBehaviour
 {
     public Vector2 startPoint;
-    public Transform towerTransform; // Додано змінну для вежі
+    public Transform towerTransform;
     public float speed;
-    public float detectionRange = 5f; // Діапазон виявлення ворогів
+    public float detectionRange = 5f;
 
-    private Transform target; // Ціль, до якої рухається юніт
+    private Transform target;
 
     private void Update()
     {
-        // Якщо є ціль і вона жива, рухаємося до неї
         if (target != null && target.gameObject.activeInHierarchy)
         {
             MoveTowards(target.position);
         }
         else
         {
-            // Шукаємо нову ціль
             FindTarget("Enemy");
 
-            // Якщо немає цілі, рухаємося до вежі
-            if (target == null)
+            if (target == null && towerTransform != null)
             {
                 MoveTowards(towerTransform.position);
             }
@@ -36,10 +33,8 @@ public class UnitMovement : MonoBehaviour
 
     private void FindTarget(string tag)
     {
-        // Знаходимо всіх ворогів на сцені
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
 
-        // Шукаємо найближчого ворога
         float closestDistance = detectionRange;
         foreach (GameObject enemy in enemies)
         {
