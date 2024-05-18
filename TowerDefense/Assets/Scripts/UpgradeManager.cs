@@ -12,7 +12,7 @@ public class UpgradeManager : MonoBehaviour
 
     public PlayerCurrency playerCurrency;
     public CoinManager coinManager;
-    public Tower tower;
+    public UnitTower unitTower;
 
     private int productionUpgradeLevel = 0;
     private int healthUpgradeLevel = 0;
@@ -47,7 +47,7 @@ public class UpgradeManager : MonoBehaviour
         if (playerCurrency.TakeCoins(cost))
         {
             healthUpgradeLevel++;
-            tower.IncreaseHealth(5);
+            unitTower.IncreaseHealth(5);
             UpdateUpgradeCosts();
         }
     }

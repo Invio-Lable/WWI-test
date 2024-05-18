@@ -1,14 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tower : MonoBehaviour
+public class EnemyTower : MonoBehaviour
 {
+
     public float maxHealth = 100f;
     private float currentHealth;
     public Text healthText;
     public GameObject victoryUI;
-    public GameObject defeatUI;
-    public bool isPlayerTower;
 
     private void Start()
     {
@@ -34,18 +33,15 @@ public class Tower : MonoBehaviour
 
     private void DestroyTower()
     {
-        if (isPlayerTower)
-        {
-            defeatUI.SetActive(true);
-        }
-        else
-        {
-            victoryUI.SetActive(true);
-        }
+        victoryUI.SetActive(true);
+        Destroy(gameObject);
     }
 
     public void IncreaseHealth(int amount)
     {
         maxHealth += amount;
+        currentHealth += amount;
+        UpdateHealthText();
     }
+
 }

@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public List<EnemyData> enemyDatas;
     public List<GameObject> enemyPrefabs;
     public Transform[] spawnPoints;
-    public Transform towerTransform;
+    public Transform playerTowerTransform;
     public int maxEnemiesPerSpawn = 3;
     public float spawnInterval = 7f;
 
@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
                 EnemyMovement enemyMover = enemyObject.GetComponent<EnemyMovement>();
                 enemyMover.startPoint = spawnPoint.position;
-                enemyMover.towerTransform = towerTransform;
+                enemyMover.towerTransform = playerTowerTransform;
                 enemyMover.speed = enemyData.movementSpeed;
             }
 

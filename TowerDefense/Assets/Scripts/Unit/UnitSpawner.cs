@@ -7,7 +7,7 @@ public class UnitSpawner : MonoBehaviour
     public GameObject unitPrefab;
     public Button spawnButton;
     public Transform startPoint;
-    public Transform towerTransform;
+    public Transform enemyTowerTransform;
     public CoinManager coinManager;
 
     private void Start()
@@ -24,7 +24,7 @@ public class UnitSpawner : MonoBehaviour
 
             UnitMovement unitMover = unitObject.GetComponent<UnitMovement>();
             unitMover.startPoint = startPoint.position;
-            unitMover.towerTransform = towerTransform;
+            unitMover.towerTransform = enemyTowerTransform;
             unitMover.speed = unitData.movementSpeed;
 
             UnitAttack unitAttack = unitObject.GetComponent<UnitAttack>();

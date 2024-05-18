@@ -6,12 +6,12 @@ public class UnitAttack : MonoBehaviour
     private float attackTimer;
     private Animator animator;
     private Collider2D target;
-    private Tower tower;
+    private EnemyTower enemyTower;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        tower = FindObjectOfType<Tower>();
+        enemyTower = FindObjectOfType<EnemyTower>();
     }
 
     private void Update()
@@ -29,11 +29,11 @@ public class UnitAttack : MonoBehaviour
                 enemyHealth.TakeDamage(unitData.damage);
             }
         }
-        else if (target == null && tower != null && Vector2.Distance(transform.position, tower.transform.position) < 1.0f && attackTimer >= unitData.attackSpeed)
+        else if (target == null && enemyTower != null && Vector2.Distance(transform.position, enemyTower.transform.position) < 1.0f && attackTimer >= unitData.attackSpeed)
         {
             animator.SetTrigger("attack");
             attackTimer = 0f;
-            tower.TakeDamage(unitData.damage);
+            enemyTower.TakeDamage(unitData.damage);
         }
         else
         {
