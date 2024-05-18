@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 3434373525236745278}
   - component: {fileID: 27700666561341215}
   - component: {fileID: 4341676921436250456}
+  - component: {fileID: 996159211880073742}
+  - component: {fileID: 9182135041657890834}
+  - component: {fileID: 1076042712328507069}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -170,3 +173,45 @@ CapsuleCollider2D:
   m_Offset: {x: -0.046033144, y: -0.6938957}
   m_Size: {x: 0.83849347, y: 1.6933944}
   m_Direction: 0
+--- !u!114 &996159211880073742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307906020344891154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49051f717fa1f5b4898d1ffda2dfedca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: 43e2ca9fad8a7154db7bc75961a32613, type: 2}
+--- !u!114 &9182135041657890834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307906020344891154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45af33f72775fb4f9dd61f3fe71a1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {x: 0, y: 0}
+  towerTransform: {fileID: 0}
+  speed: 5
+  detectionRange: 10
+--- !u!114 &1076042712328507069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307906020344891154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3f8fbe200a0d3418abf834232d225a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: 43e2ca9fad8a7154db7bc75961a32613, type: 2}
