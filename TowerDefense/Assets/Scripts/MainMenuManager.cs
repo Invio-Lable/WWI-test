@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SceneManager : MonoBehaviour
+public class MainMenuManager : MonoBehaviour
 {
 
     public string sceneName;

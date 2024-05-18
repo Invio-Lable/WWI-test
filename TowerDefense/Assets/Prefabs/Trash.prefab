@@ -169,5 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthText: {fileID: 0}
+  healthText: {fileID: 8135742918841823528}
   defeatUI: {fileID: 0}
+  gameManager: {fileID: 0}

@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class UnitTower : MonoBehaviour
 {
-
-    public float maxHealth = 100f;
+    public float maxHealth = 50f;
     private float currentHealth;
     public Text healthText;
     public GameObject defeatUI;
+    public GameManager gameManager;
 
     private void Start()
     {
@@ -33,15 +33,15 @@ public class UnitTower : MonoBehaviour
 
     private void DestroyTower()
     {
-        defeatUI.SetActive(true);
+        gameManager.ShowDefeatUI();
         Destroy(gameObject);
     }
 
     public void IncreaseHealth(int amount)
     {
+        Debug.Log($"Increasing health by {amount}");
         maxHealth += amount;
         currentHealth += amount;
         UpdateHealthText();
     }
-
 }
