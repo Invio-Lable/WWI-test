@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45af33f72775fb4f9dd61f3fe71a1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: 0, y: 0, z: 0}
-  endPoint: {x: 0, y: 0, z: 0}
+  startPoint: {x: 0, y: 0}
+  towerTransform: {fileID: 0}
   speed: 5
   detectionRange: 10
 --- !u!114 &8308827008652219262

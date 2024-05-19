@@ -16,7 +16,7 @@ public class CoinManager : MonoBehaviour
 
     private void Update()
     {
-        coins += Time.deltaTime / productionInterval; 
+        coins += Time.deltaTime / productionInterval;
         UpdateCoinText();
     }
 

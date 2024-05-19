@@ -39,9 +39,6 @@ public class UnitTower : MonoBehaviour
 
     public void IncreaseHealth(int amount)
     {
-        Debug.Log($"Increasing health by {amount}");
         maxHealth += amount;
-        currentHealth += amount;
-        UpdateHealthText();
     }
 }

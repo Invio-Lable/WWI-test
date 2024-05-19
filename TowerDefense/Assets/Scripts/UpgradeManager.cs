@@ -84,9 +84,9 @@ public class UpgradeManager : MonoBehaviour
 
     private void UpdateUpgradeCosts()
     {
-        speedUpgradeCostText.text = Mathf.Round(baseSpeedUpgradeCost * Mathf.Pow(1.3f, productionUpgradeLevel)).ToString();
-        healthUpgradeCostText.text = Mathf.Round(baseHealthUpgradeCost * Mathf.Pow(1.3f, healthUpgradeLevel)).ToString();
-        bonusUpgradeCostText.text = Mathf.Round(baseBonusUpgradeCost * Mathf.Pow(1.3f, bonusUpgradeLevel)).ToString();
+        speedUpgradeCostText.text = Mathf.RoundToInt(baseSpeedUpgradeCost * Mathf.Pow(1.3f, productionUpgradeLevel)).ToString();
+        healthUpgradeCostText.text = Mathf.RoundToInt(baseHealthUpgradeCost * Mathf.Pow(1.3f, healthUpgradeLevel)).ToString();
+        bonusUpgradeCostText.text = Mathf.RoundToInt(baseBonusUpgradeCost * Mathf.Pow(1.3f, bonusUpgradeLevel)).ToString();
         Debug.Log("Upgrade costs updated.");
     }
 }
