@@ -3,6 +3,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public EnemyData enemyData;
+    public UnitData unitData;
+    public CurrencyData currencyData;
     private int currentHealth;
 
     private void Start()
@@ -16,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            currencyData.coins += unitData.reward;
             Destroy(gameObject);
         }
     }

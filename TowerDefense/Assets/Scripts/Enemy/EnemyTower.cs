@@ -31,7 +31,7 @@ public class EnemyTower : MonoBehaviour
         healthText.text = currentHealth.ToString("F0");
     }
 
-    private void DestroyTower()
+    public void DestroyTower()
     {
         gameManager.ShowVictoryUI();
         Destroy(gameObject);

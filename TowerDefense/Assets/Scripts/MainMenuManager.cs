@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-
     public string sceneName;
     public Button button;
 
@@ -16,5 +15,4 @@ public class MainMenuManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
-
 }

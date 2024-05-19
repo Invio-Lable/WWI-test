@@ -186,6 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: a7da7e4737743364ab778f1699f118f5, type: 2}
+  unitData: {fileID: 11400000, guid: c07a4dff0eb4c214c8f808f65b361f86, type: 2}
+  currencyData: {fileID: 11400000, guid: 806e0eb3ece010648b1e8da6f5f5012f, type: 2}
 --- !u!114 &943646901220301300
 MonoBehaviour:
   m_ObjectHideFlags: 0
