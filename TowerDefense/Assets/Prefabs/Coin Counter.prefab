@@ -169,4 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 3986542968347977774}
-  productionInterval: 1
+  gameData: {fileID: 11400000, guid: f7fbd4132989a1849a2fbe154f6b973a, type: 2}

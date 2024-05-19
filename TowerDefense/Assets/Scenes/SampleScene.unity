@@ -278,6 +278,7 @@ MonoBehaviour:
   playerCurrency: {fileID: 291072698}
   coinManager: {fileID: 3779165415582952442, guid: 8fd6a13f4bc76a94688e9ab0fc7c5f1a, type: 3}
   unitTower: {fileID: 776585767724411174, guid: a7166ff5b64dfa1468292e741665c2f8, type: 3}
+  gameData: {fileID: 11400000, guid: f7fbd4132989a1849a2fbe154f6b973a, type: 2}
 --- !u!1 &174285559
 GameObject:
   m_ObjectHideFlags: 0

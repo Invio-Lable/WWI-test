@@ -3,15 +3,16 @@ using UnityEngine.UI;
 
 public class UnitTower : MonoBehaviour
 {
-    public float maxHealth = 50f;
-    private float currentHealth;
+    public GameData gameData;
     public Text healthText;
     public GameObject defeatUI;
     public GameManager gameManager;
 
+    private float currentHealth;
+
     private void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = gameData.towerHealth;
         UpdateHealthText();
     }
 
@@ -39,6 +40,6 @@ public class UnitTower : MonoBehaviour
 
     public void IncreaseHealth(int amount)
     {
-        maxHealth += amount;
+        gameData.towerHealth += amount;
     }
 }

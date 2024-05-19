@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b6297f5757d1419e5ccd391cb9917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  gameData: {fileID: 11400000, guid: f7fbd4132989a1849a2fbe154f6b973a, type: 2}
   healthText: {fileID: 8135742918841823528}
   defeatUI: {fileID: 0}
   gameManager: {fileID: 0}

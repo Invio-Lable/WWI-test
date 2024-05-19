@@ -4,22 +4,37 @@ using UnityEngine.UI;
 public class CoinManager : MonoBehaviour
 {
     public Text coinText;
-    public float productionInterval = 1;
+    public GameData gameData;
+
     private float coins;
-    private float bonus = 0;
 
     private void Start()
     {
-        coins = bonus;
+        coins = gameData.bonus;
         UpdateCoinText();
     }
 
     private void Update()
     {
-        coins += Time.deltaTime / productionInterval;
+        coins += Time.deltaTime / gameData.productionInterval;
         UpdateCoinText();
     }
 
+    private void UpdateCoinText()
+    {
+        coinText.text = coins.ToString("F0");
+    }
+
+    public bool TakeCoins(int amount)
+    {
+        if (Mathf.FloorToInt(coins) >= amount)
+        {
+            coins -= amount;
+            UpdateCoinText();
+            return true;
+        }
+        return false;
+    }
     public bool SpendCoins(int amount)
     {
         if (Mathf.FloorToInt(coins) >= amount)
@@ -31,29 +46,19 @@ public class CoinManager : MonoBehaviour
         return false;
     }
 
-    public void UpdateCoinText()
-    {
-        coinText.text = coins.ToString("F0");
-    }
-
-    public float GetCoins()
-    {
-        return coins;
-    }
-
     public void AddBonus(float amount)
     {
-        bonus += amount;
-        coins = bonus;
+        gameData.bonus += amount;
+        coins = gameData.bonus;
         UpdateCoinText();
     }
+
     public void IncreaseProductionSpeed(float amount)
     {
-        productionInterval -= amount;
-        if (productionInterval < 0.1f)
+        gameData.productionInterval -= amount;
+        if (gameData.productionInterval < 0.1f)
         {
-            productionInterval = 0.1f;
+            gameData.productionInterval = 0.1f;
         }
     }
-
 }
